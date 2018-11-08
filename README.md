@@ -1,5 +1,5 @@
 # Cooltools
-This project inculde some scripts and tools for make my work easy.
+This project inculde some scripts and tools for makeing my daily work easier.
 THere are two kind of things，first thing is python script and second one is ansible playbook for automatic install software.
 I am not good at coding,so if there are some bugs in tools,contact me and I will fix it.
 
