@@ -46,6 +46,6 @@ elasticsearch-{{ es_verion }}.tar.gz,kibana-{{ es_version }}.tar.gz, and put it 
 5: the inventry file shoud write like it:
 role_id is not a nessary varible.It shoud be defined when you need install two instaces in a directory.
 ```
-_cluster]
+[es_cluster]
 127.0.0.1 node_name=test_node1 is_master=true is_data=true http_port=9200 transport_port=9300 ansible_python_interpreter=/data01/anaconda2/bin/python install_kibana=true role_id=1
 ```
