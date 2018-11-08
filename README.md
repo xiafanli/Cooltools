@@ -6,4 +6,4 @@ I am not good at coding,so if there are some bugs in tools,contact me and I will
 Email：xiafanli1987@163.com
 QQ: 85973131
 
-As I known, nobody when start this crappy project.LOL
+As I known, nobody will star and watch this crappy project.LOL
