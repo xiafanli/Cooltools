@@ -1,0 +1,33 @@
+---
+#install paramter
+es_avliable_version: ["6.3.1", "5.4.3"]
+es_version: "5.4.3"
+es_base_home: "elasticsearch-{{ es_version}}"
+ki_base_home: "kibana-{{ es_version}}-linux-x86_64"
+es_root_home: "/opt/home/hadoop"
+#es_config: 
+#  cluster.name: "custom-cluster"
+#  discovery.zen.ping.unicast.hosts: "localhost:9301"
+#  bootstrap.memory_lock: true
+#  bootstrap.system_call_filter: false 
+#  discovery.zen.ping.unicast.hosts: ""
+#  discovery.zen.minimum_master_nodes: ""
+#  xpack,security.enabled: false
+
+#custom_es_config:
+#  script.max_compilations_per_minute: 120
+#  indices.query.bool.max_clause_count: 409600
+es_config: {}
+custom_es_config: {}
+es_data_dirs: "/var/lib/elasticsearch"
+es_log_dir: "/var/log/elasticsearch"
+es_heap_size: "31g"
+es_young_generration: "6g"
+es_install_xpack: false
+kibana_config: {}
+#These follow parameters must be defind in host vars
+#node.name: "node1"
+#node.master: true
+#node.data: false
+#http.port: 9201
+#transport.tcp.port: 9301

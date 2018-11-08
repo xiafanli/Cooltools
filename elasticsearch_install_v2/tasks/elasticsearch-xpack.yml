@@ -1,0 +1,40 @@
+---
+
+#only run for the version of 5.4.3
+#- name: copy xpack tar ball to remote
+#  copy:
+#    src: x-pack-5.4.3.zip
+#    dest: "{{ es_root_home }}/{{ es_base_home }}"
+#    owner: "{{ es_user }}"
+#    group: "{{ es_group }}"
+#  when: es_version == "5.4.3"
+#
+#- name: install x-pack for elasticsearch
+#  expect:
+#    command: "{{ es_root_home }}/{{ es_base_home }}/bin/elasticsearch-plugin install file://{{ es_root_home }}/{{ es_base_home }}/x-pack-5.4.3.zip"
+#    responses:
+#      'Continue with installation\? \[y\/N\]': 'y'
+#  when: es_version == "5.4.3"
+#
+#- name: install x-pack for kibana
+#  command: "{{ es_root_home }}/{{ ki_base_home }}/bin/kibana-plugin install file://{{ es_root_home }}/elasticsearch-{{ es_version }}/x-pack-5.4.3.zip"
+#  when: es_version == "5.4.3"
+
+- name: install x-pack for es
+  unarchive:
+    src: elasticsearch-xpack.tar.gz
+    dest: "{{ es_root_home }}/{{ es_base_home }}/plugins/"
+    owner: "{{ es_user }}"
+    group: "{{ es_group }}"
+  when: es_version == "5.4.3"
+
+- name: install x-pack for kibana
+  unarchive:
+    src: kibana-xpack.tar.gz
+    dest: "{{ es_root_home }}/{{ ki_base_home }}/plugins/"
+    owner: "{{ es_user }}"
+    group: "{{ es_group }}"
+  when: 
+    - es_version == "5.4.3"
+    - install_kibana
+

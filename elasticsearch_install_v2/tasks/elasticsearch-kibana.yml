@@ -1,0 +1,10 @@
+---
+
+- name: unarchive kibana to dest
+  unarchive:
+    src: "kibana-{{ es_version }}-linux-x86_64.tar.gz"
+    dest: "{{ es_root_home }}"
+    owner: "{{ es_user }}"
+    group: "{{ es_group }}"
+    remote_src: no
+  when: install_kibana

@@ -1,0 +1,12 @@
+---
+
+- name: check data and path if not create it
+  file:
+    path: "{{ item }}"
+    owner: "{{ es_user }}"
+    group: "{{ es_group }}"
+    state: directory
+    recurse: yes
+  with_items:
+   - "{{ es_data_dirs }}"
+   - "{{ es_log_dir }}"

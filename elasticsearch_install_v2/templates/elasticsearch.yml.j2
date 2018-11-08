@@ -1,0 +1,19 @@
+node.name: {{ node_name }}
+node.master: {{ is_master }}
+node.data: {{ is_data }}
+network.host: {{ ansible_enp0s3['ipv4']['address'] }}
+http.port: {{ http_port }}
+transport.tcp.port: {{ transport_port }}
+path.data: {{ es_data_dirs| array_to_str }}
+path.logs: {{ es_log_dir }}
+
+{% if es_config %}
+{{ es_config | to_nice_yaml }}
+{% endif %}
+
+{% if custom_es_config%}
+{{ custom_es_config | to_nice_yaml }}
+{% endif %}
+
+http.cores.enabled: true
+http.cores.alow-origin: "*"

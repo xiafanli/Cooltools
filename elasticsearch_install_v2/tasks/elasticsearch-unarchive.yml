@@ -1,0 +1,16 @@
+---
+#- name: create unarchive directory
+#  file:
+#    path: "{{ es_root_home }}/{{ es_base_home }}"
+#    owner: "{{ es_user }}"
+#    group: "{{ es_group }}"
+#    state: directory
+#    recurse: yes
+ 
+- name: unarchive tar file to remote
+  unarchive:
+    src: "elasticsearch-{{ es_version }}.tar.gz"
+    dest: "{{ es_root_home }}"
+    owner: "{{ es_user }}"
+    group: "{{ es_group }}"
+    remote_src: no

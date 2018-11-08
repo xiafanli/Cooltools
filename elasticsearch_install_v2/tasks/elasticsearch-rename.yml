@@ -1,0 +1,4 @@
+---
+
+- name: rename es directory
+  command: mv "{{ es_root_home }}/{{es_base_home }}" "{{ es_root_home }}/{{ es_base_home}}_{{ role_id }}"

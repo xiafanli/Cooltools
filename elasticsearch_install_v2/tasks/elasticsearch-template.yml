@@ -1,0 +1,22 @@
+---
+
+- name: template for elasticsearch.yml
+  template:
+    src: elasticsearch.yml.j2
+    dest: "{{ es_root_home }}/{{ es_base_home }}/config/elasticsearch.yml"
+
+- name: template for jvm.options
+  template:
+    src: jvm.options.j2 
+    dest: "{{ es_root_home }}/{{ es_base_home }}/config/jvm.options"
+
+- name: template for log4j2.properties
+  template:
+    src: log4j2.properties.{{ es_version }}.j2
+    dest: "{{ es_root_home }}/{{ es_base_home }}/config/log4j2.properties"
+
+- name: template for kibana
+  template:
+    src: kibana.yml.j2
+    dest: "{{ es_root_home }}/{{ ki_base_home }}/config/kibana.yml"
+  when: install_kibana

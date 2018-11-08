@@ -1,0 +1,20 @@
+---
+- name: check and create elasticsearch data path
+  import_tasks: elasticsearch-config.yml
+
+- name: unarchive elasticsearch file to remote
+  import_tasks: elasticsearch-unarchive.yml
+
+- name: unarchive elasticsearch file to remote
+  import_tasks: elasticsearch-kibana.yml
+
+- name: template elasticsearch config file
+  import_tasks: elasticsearch-template.yml
+
+- name: install xpack plugin
+  import_tasks: elasticsearch-xpack.yml
+  when: es_install_xpack
+
+- name: rename es directory
+  import_tasks: elasticsearch-rename.yml
+  when: role_id is defined
