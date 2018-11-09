@@ -1,6 +1,6 @@
 ---
 #install paramter
-es_avliable_version: ["6.3.1", "5.4.3"]
+es_available_version: ["6.3.1", "5.4.3"]
 es_version: "5.4.3"
 es_base_home: "elasticsearch-{{ es_version}}"
 ki_base_home: "kibana-{{ es_version}}-linux-x86_64"
