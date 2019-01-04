@@ -4,10 +4,14 @@ This is an role for install elasticsearch with binary tar ball.
 
 ## Prepare
 1:Download the same version tar ball of elasticsearch and kibana,and copy it to the files directory;
+
 2:Make sure the version is included in es_available_version of  defaults/main.yml;
+
 you can overwrite es_available_version into the entry playbook
+
 3:if u want to install xpack,download the xpack tar ball,then unarchive the package,and archive the single directory name like
-elasticsearch-{{ es_verion }}.tar.gz,kibana-{{ es_version }}.tar.gz, and put them into file directory.
+elasticsearch-{{ es_verion }}.tar.gz,kibana-{{ es_version }}.tar.gz, and put them into file directory；
+
 4:The following playbook is an example playbook:
 ```
 ---
